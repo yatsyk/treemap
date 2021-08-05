@@ -1,0 +1,32 @@
+{
+  "name": "@cushiontreemap/core",
+  "version": "0.0.18",
+  "description": "> TODO: description",
+  "author": "Andrey Yatsyk <yatsyk@gmail.com>",
+  "main": "dist/index.js",
+  "private": false,
+  "module": "dist/index.module.js",
+  "unpkg": "dist/index.umd.js",
+  "license": "MIT",
+  "directories": {
+    "lib": "dist",
+    "test": "__tests__"
+  },
+  "files": [
+    "dist"
+  ],
+  "source": "src/index.ts",
+  "scripts": {
+    "dev": "microbundle watch",
+    "build": "microbundle build",
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "dependencies": {
+    "squarify": "^1.x"
+  },
+  "devDependencies": {
+    "microbundle": "^0.13.0",
+    "typedoc": "^0.21.4"
+  },
+  "gitHead": "d5654f61a11cff2e48312c104427de8fb76ae454"
+}
