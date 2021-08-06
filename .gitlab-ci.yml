@@ -15,10 +15,9 @@ build-site:
   variables:
     PREVIEW_URL1: "$CI_PROJECT_NAME-$CI_COMMIT_REF_SLUG.$VERCEL_SCOPE.vercel.app"
     PREVIEW_URL2: "$CI_PROJECT_NAME-$CI_COMMIT_SHORT_SHA.$VERCEL_SCOPE.vercel.app"
-    PREVIEW_URL3: "$CI_PROJECT_NAME.vercel.app"
-    PREVIEW_URL4: "$CI_PROJECT_NAME.n.yatsyk.com"
-    PREVIEW_URL5: "treemap.n.yatsyk.com"
-    PREVIEW_URL6: "treemap.yatsyk.com"
+    PREVIEW_URL3: "$CI_PROJECT_NAME.n.yatsyk.com"
+    PREVIEW_URL4: "treemap.n.yatsyk.com"
+    PREVIEW_URL5: "treemap.yatsyk.com"
   script:
     - pwd
     - npm i -g vercel
@@ -29,27 +28,3 @@ build-site:
     - vercel alias set $DEPLOYMENT_URL $PREVIEW_URL3 -t $VERCEL_TOKEN
     - vercel alias set $DEPLOYMENT_URL $PREVIEW_URL4 -t $VERCEL_TOKEN
     - vercel alias set $DEPLOYMENT_URL $PREVIEW_URL5 -t $VERCEL_TOKEN
-    - vercel alias set $DEPLOYMENT_URL $PREVIEW_URL6 -t $VERCEL_TOKEN
-
-#build-site-old:
-#  stage: build-site
-#  image: node
-
-#  tags:
-#    - box
-
-#  variables:
-#    PREVIEW_URL1: "$CI_PROJECT_NAME-$CI_COMMIT_REF_SLUG.$VERCEL_SCOPE.vercel.app"
-#    PREVIEW_URL2: "$CI_PROJECT_NAME-$CI_COMMIT_SHORT_SHA.$VERCEL_SCOPE.vercel.app"
-#    PREVIEW_URL3: "$CI_PROJECT_NAME.vercel.app"
-#    PREVIEW_URL4: "$CI_PROJECT_NAME.n.yatsyk.com"
-#  script:
-#    - pwd
-#    - npm i -g vercel
-#    - pushd old-next-app
-#    - yarn
-#    - DEPLOYMENT_URL=$(vercel --name old-$CI_PROJECT_NAME --confirm -t $VERCEL_TOKEN)
-#    - vercel alias set $DEPLOYMENT_URL old-$PREVIEW_URL1 -t $VERCEL_TOKEN
-#    - vercel alias set $DEPLOYMENT_URL old-$PREVIEW_URL2 -t $VERCEL_TOKEN
-#    - vercel alias set $DEPLOYMENT_URL old-$PREVIEW_URL3 -t $VERCEL_TOKEN
-#    - vercel alias set $DEPLOYMENT_URL old-$PREVIEW_URL4 -t $VERCEL_TOKEN
